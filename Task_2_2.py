@@ -15,7 +15,7 @@ for i in range(n):
     if smallest == lst[i]:
         print(smallest)
 
-we print 1st and 2nd largest number:
+# we print 1st and 2nd largest number:
 
 n = int(input())
 largest_1 = 0
