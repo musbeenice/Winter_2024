@@ -9,5 +9,7 @@ while True:
     if salary == 0:
         counter -= 1
         break
-average = total / counter
-print(average)
+if counter == 0:
+    print("Error")
+else:
+    print(total / counter)
