@@ -7,6 +7,7 @@ while True:
     total += salary
     counter += 1
     if salary == 0:
+        counter -= 1
         break
 average = total / counter
 print(average)
