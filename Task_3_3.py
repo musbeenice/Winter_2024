@@ -35,7 +35,7 @@ for w in s:
     if len(w) == len(res[0]):
         res.append(w)
     elif len(w) < len(res[0]):
-        continue  # 'pass' работает по-другому!!!
+        continue  # 'pass' работает по-другому
     elif len(w) > len(res[0]):
         res = [w]
     print(*res)
