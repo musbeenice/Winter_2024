@@ -3,10 +3,6 @@
 n = int(input())
 dct = {}
 
-# for line in range(1, n + 1):
-#     for value in range(1, line + 1):
-#         dct.setdefault(line, []).append(1)
-
 for line in range(n):
     row = [1]
     if line > 0:
