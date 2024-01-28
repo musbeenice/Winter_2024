@@ -37,8 +37,32 @@
 
 # or
 
-n = int(input())
+# n = int(input())
 
-lst = [[1]]
+# lst_1 = [0, 1]
+
+# for i in range(1, n + 1):
+#     lst_2 = [0]
+#     for j in range(i):
+#         lst_2.append(lst_1[j] + lst_1[j + 1])
+#         print(lst_2[-1], end=" ")
+#     lst_2.append(0)
+#     print()
+#     lst_1 = lst_2.copy()
 
 # or
+
+n = int(input())
+
+lst = [0, 1, 0]
+
+print(1)
+for i in range(2, n + 1):
+    x = lst[0]
+    for j in range(1, i + 1):
+        y = x + lst[j]
+        print(y, end=" ")
+        x = lst[j]
+        lst[j] = y
+    print()
+    lst.append(0)
