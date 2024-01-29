@@ -1,6 +1,6 @@
 # Вторая задача к шестому занятию
 
-pupil_1, pupil_2 = input().split(), input().split()
+pupil_1, pupil_2 = input().split(', '), input().split(', ')
 
 lst_1, lst_2 = [], []
 
