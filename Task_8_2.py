@@ -7,3 +7,11 @@ def sorted_sublst():
         res.append(sorted(i, reverse = True))
     return res
 print(sorted_sublst())
+
+def sorted_lst():
+    for i in lst:
+        sub_list = []
+        for j in ''.join(map(str, i)):
+            sub_list.append(int(j))
+    return len(set(sub_list))
+print(sorted(lst, key = sorted_lst()))
