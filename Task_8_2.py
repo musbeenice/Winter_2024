@@ -6,3 +6,12 @@ res = []
 for i in lst:
     res.append(list(map(str, i)))
 print(res)
+
+result = []
+for i in lst:
+    inner_list = []
+    for j in ''.join(map(str, i)):
+        inner_list.append(int(j))
+    result.append(inner_list)
+
+print(result)
