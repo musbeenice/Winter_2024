@@ -15,3 +15,14 @@ for i in lst:
     result.append(inner_list)
 
 print(result)
+
+lst = [[1, 55, 23], [27, 34, 11, 45], [3, 7, 9, 0, 78]]
+
+# Функция для подсчета количества цифр в числе
+def count_digits(number):
+    return sum(c.isdigit() for c in str(number))
+
+# Сортировка по количеству цифр и убыванию внутри каждого подсписка
+sorted_lst = sorted(lst, key=lambda sublist: (sum(map(count_digits, sublist)), sublist), reverse=True)
+
+print(sorted_lst)
