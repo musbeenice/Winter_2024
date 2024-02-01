@@ -4,7 +4,7 @@ lst = ["abab", "xx", "aaaaaaa", "abcbab"]
 
 
 def sort_lst(x):
-    return -len(set(x))
+    return -len(set(x)), x
 
 
-print(sorted(lst, key=lambda x: (sort_lst(x), x)))
+print(sorted(lst, key=lambda x: (sort_lst(x))))
