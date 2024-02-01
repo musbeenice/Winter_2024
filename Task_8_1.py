@@ -10,7 +10,10 @@ while i < len(code):
         res += code[i + 1] + code[i]
         i += 2
     elif i + 1 < len(code) and (code[i : i + 2] == "ТЦ" or code[i : i + 2] == "ЦТ"):
-        res += "ТАГЦ" if code[i] == "Т" else "ЦАГТ"
+        if code[i] == "Т":
+            res += "ТАГЦ" 
+        else: 
+            res += "ЦАГТ"
         i += 2
     else:
         res += code[i]
