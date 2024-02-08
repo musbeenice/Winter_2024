@@ -2,13 +2,13 @@
 
 import openpyxl
 
-wb = openpyxl.load.workbook("test.xlsx")
+wb = openpyxl.load_workbook("test.xlsx")
 ws = wb.active
 
 lst = []
 
 for i in range(ws.max_row):
-    lst.append((ws.cell(i + 1, 1).value, ws.cell(i + 1, 2).value))
+    lst.append(ws.cell(i + 1, 2).value)
 print(lst)
 
 if "Stat" not in wb:
@@ -30,7 +30,7 @@ if leng:
     ws.cell(5, 2).value = medi
 
 for i in range(ws.max_row):
-    for i in range(ws.max_column):
+    for j in range(ws.max_column):
         print(i + 1, j + 1, ws.cell(i + 1, j + 1).value)
 
 wb.save("test.xlsx")

@@ -23,7 +23,7 @@ def roman_to_decimal(number):
         for i in dct:
             if number.startswith(i):
                 res += dct[i]
-                number = number[len(i) :]
+                number = number[len(i):]  # срезаем пройденную(ые) букву(ы)!
                 print(i, dct[i], res)
                 break
     return res
