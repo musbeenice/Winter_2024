@@ -1,4 +1,4 @@
-# Первая задача к двеннадцатому занятию
+# Первая задача к двенадцатому занятию
 
 def func(lst):
     lst_1 = [x for x in range(len(lst)) if lst[x] == min(lst)]
