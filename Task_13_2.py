@@ -6,6 +6,7 @@ def func(limit):
             yield x
 
 g = func(int(input()))
+
 while True:
     try:
         print(next(g), end=" ")

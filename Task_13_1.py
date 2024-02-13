@@ -5,6 +5,8 @@ def func():
     while True:
         yield x if x % 2 else -x
         x += 1
+
 g = func()
+
 for i in range(int(input())):
     print(next(g), end=" ")
