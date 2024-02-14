@@ -1,14 +1,31 @@
 # Вторая задача к тринадцатому занятию
 
-def func(limit):
-    for x in range(1, limit):
-        if str(x) == str(x)[::-1]:
-            yield x
+# Вывод num палиндромов:
+def palindrome():
+    n = 0
+    while True:
+        n += 1
+        if str(n) == str(n)[::-1]:
+            yield n
 
-g = func(int(input()))
+g = palindrome()
+num = int(input())
 
-while True:
-    try:
-        print(next(g), end=" ")
-    except StopIteration:
-        break
+for _ in range(num):
+    print(next(g), end=" ")
+
+# or
+
+# Вывод чисел-палиндромов до числа = limit:
+# def func():
+#     for x in range(1, limit):
+#         if str(x) == str(x)[::-1]:
+#             yield x
+
+# g = func(int(input()))
+
+# while True:
+#     try:
+#         print(next(g), end=" ")
+#     except StopIteration:
+#         break
