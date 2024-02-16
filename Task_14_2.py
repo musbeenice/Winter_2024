@@ -1,9 +1,7 @@
 # Вторая задача к четырнадцатому занятию
 
-def total_dig(n, t = 0):
-    while n > 0:
-        dig = n % 10
-        t += dig
-        return total_dig(n // 10, t)
-    return t
+def total_dig(n):
+    if abs(n) < 10:
+        return n
+    return n % 10 + total_dig(n // 10)
 print(total_dig(int(input())))
