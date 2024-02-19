@@ -2,7 +2,8 @@
 
 from re import *
 
+ab = "ABCEHKMOPTXYАВСЕНКМОРТХУ"
+tmpl = rf"[{ab}]\d\d\d[{ab}][{ab}]1?78"
 msg = input()
 
-regex = r"[AАBВCСEЕHНKКMМOОPРTТXХ]\d{3}[AАBВCСEЕHНKКMМOОPРTТXХ][AАBВCСEЕHНKКMМOОPРTТXХ]78|[AАBВCСEЕHНKКMМOОPРTТXХ]\d{3}[AАBВCСEЕHНKКMМOОPРTТXХ][AАBВCСEЕHНKКMМOОPРTТXХ]178"
-print(*findall(regex, msg))
+print(*findall(tmpl, msg))
