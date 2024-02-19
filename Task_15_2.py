@@ -4,5 +4,5 @@ from re import *
 
 msg = input()
 
-regex = r"[AАBВCСEЕHНKКMМOОPРTТXХ]\d{3}[AАBВCСEЕHНKКMМOОPРTТXХ][AАBВCСEЕHНKКMМOОPРTТXХ]\d{2,3}"
+regex = r"[AАBВCСEЕHНKКMМOОPРTТXХ]\d{3}[AАBВCСEЕHНKКMМOОPРTТXХ][AАBВCСEЕHНKКMМOОPРTТXХ]78|[AАBВCСEЕHНKКMМOОPРTТXХ]\d{3}[AАBВCСEЕHНKКMМOОPРTТXХ][AАBВCСEЕHНKКMМOОPРTТXХ]178"
 print(*findall(regex, msg))

@@ -6,10 +6,7 @@ res = []
 def func(d, x):
     for k, v in d.items():
         if k == x:
-            if type(v) == dict:
-                res.append({})
-            else:
-                res.append(v)
+            res.append(v)
         if type(v) == dict:
             func(v, x)
         else:
