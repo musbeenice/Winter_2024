@@ -1,10 +1,22 @@
 # Вторая задача к шестнадцатому занятию
 
 from re import *
- 
+
 n = str(int(input()))
-msg = "0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 45, 50, 60, 65, 32, 40, 30, 12, 27, 46, 78, 99, 100"
- 
-regex = rf"[+-]?\b[0-{str(int(n[0]) - 1)}]?[0-9]\b|[+-]?\b{n[0]}[0-{n[1]}]\b"
- 
+msg = " ".join([str(i) for i in range(int(input()))])
+
+regex = rf"[+-]?\b[0-{int(n[0]) - 1}]?[0-9]\b|[+-]?\b{n[0]}[0-{n[1]}]\b"
+
 print(*findall(regex, msg))
+
+# or
+
+# from re import *
+
+# text = " ".join([str(i) for i in range(123)])
+# s = ""
+
+# n = 45
+# for i in range(46):
+#     s += r"\b" + str(i) + r"\b"
+# print(s)
