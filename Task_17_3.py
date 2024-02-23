@@ -7,7 +7,12 @@ class Shape:
     def get_color(self):
         self.color = input("Enter the color:\n")
     def get_square(self):
-        self.square = float(input("Enter the square:\n"))
+        while True:
+            try:
+                self.square = float(input("Enter the square:\n"))
+                break
+            except ValueError:
+                print("Try again")
     def info(self):
         return f"This thing is of the {self.color} color; its square is {self.square} sq sm"
 a = Shape("", 0)
