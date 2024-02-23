@@ -19,7 +19,7 @@ class Shape:
             except ValueError:
                 print("Try again")
     def info(self):
-        return f"This thing is of the {self.color} color; its square is {self.square} sq sm"
+        return f"The thing is of the {self.color} color; its square is {self.square} sq sm"
 a = Shape("", 0)
 a.get_color()
 a.get_square()

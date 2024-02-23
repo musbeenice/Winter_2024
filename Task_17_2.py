@@ -2,11 +2,11 @@
 
 def uppercase_deco(func):
     def wrapper(*args, **kwargs):
-        res = " ".join([x.upper() for x in args if type(x) == str])
+        res = [x.upper() for x in args if type(x) == str]
         for k, v in kwargs.items():
             for i in v:
                 if type(i) == str:
-                    res += " " + i.upper()
+                    res.append(i.upper())
         return res
     return wrapper
 
