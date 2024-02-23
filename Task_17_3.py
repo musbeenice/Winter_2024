@@ -5,7 +5,12 @@ class Shape:
         self.color = color
         self.square = square
     def get_color(self):
-        self.color = input("Enter the color:\n")
+        while True:
+            self.color = input("Enter the color:\n")
+            if self.color.isalpha():
+                break
+            else:
+                print("Try again")
     def get_square(self):
         while True:
             try:
