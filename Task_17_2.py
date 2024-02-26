@@ -3,13 +3,14 @@
 def uppercase_deco(func):
     def wrapper(*args, **kwargs):
         res = [x.upper() for x in args if type(x) == str]
-        for k, v in kwargs.items():
+        for v in kwargs.values():
             if type(v) == str:
                 res.append(v.upper())
             if type(v) == list or type(v) == tuple or type(v) == set:
                 for i in v:
                     if type(i) == str:
                         res.append(i.upper())
+        out = func(*args, **kwargs)
         return res
     return wrapper
 
