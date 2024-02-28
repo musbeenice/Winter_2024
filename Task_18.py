@@ -10,32 +10,26 @@ class Professor:
         self.work = 0
         self.verdict = {}
     def give_task(self, hometask, student):
-        student.receive(hometask)
+        student.receive_hometask(hometask)
         self.work += 1
     def check(self, student):
-        for task in student.send_away():
-            self.verdict[task + f"_{student.name}"] = self.verdict.get(task + f"_{student.name}", 0) + randint(0, 1)
+        self.verdict = {task: randint(0, 1) for task in student.send_away()}
         return self.verdict
-    def __str__(self):
-        if self.work == 1:
-            return f"Professor has given just one task and it was{"".join([" not " if v == 0 else " " for v in self.verdict.values()])}solved correctly"
-        else:
-            res = 0
-            for v in self.verdict.values():
-                res += v
-            return f"Professor has given {self.work} tasks and {res} of them were solved corretly"
 class Student:
     group = []
     def __init__(self, name):
         self.name = name
         self.tasks = []
+        self.results = []
         Student.group.append(self)
-    def receive(self, hometask):
+    def receive_hometask(self, hometask):
         self.tasks.append(hometask)
     def send_away(self):
         return self.tasks
+    def receive_verdict(self, professor):
+        self.results.extend(task for task, res in professor.check(self).items() if res == 1)
     def __str__(self):
-        return f"Student {self.name} has received and solved {", ".join([i for i in self.tasks])}"
+        return f"Student {self.name} has received and solved {', '.join(self.tasks)}. These tasks were solved correctly: {', '.join(self.results) if self.results != [] else None}"
 
 ht = Tasks(["Task_1", "Task_2", "Task_3", "Task_4", "Task_5", "Task_6", "Task_7", "Task_8"])
 
@@ -50,10 +44,9 @@ some_prof.give_task(ht.hometasks[5], pyotr)
 some_prof.give_task(ht.hometasks[7], pyotr)
 some_prof.give_task(ht.hometasks[3], stepa)
 some_prof.give_task(ht.hometasks[0], stepa)
-some_prof.check(alex)
-some_prof.check(pyotr)
-some_prof.check(stepa)
+alex.receive_verdict(some_prof)
+pyotr.receive_verdict(some_prof)
+stepa.receive_verdict(some_prof)
 print(alex)
 print(pyotr)
 print(stepa)
-print(some_prof)
