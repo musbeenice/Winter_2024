@@ -29,7 +29,7 @@ class Student:
     def receive_verdict(self, professor):
         self.results.extend(task for task, res in professor.check(self).items() if res == 1)
     def __str__(self):
-        return f"Student {self.name} has received and solved {', '.join(self.tasks)}. These tasks were correct: {', '.join(self.results) if self.results != [] else None}"
+        return f"Student {self.name} has received and solved {', '.join(self.tasks)}. These tasks were solved correctly: {', '.join(self.results) if self.results != [] else None}"
 
 ht = Tasks(["Task_1", "Task_2", "Task_3", "Task_4", "Task_5", "Task_6", "Task_7", "Task_8"])
 
