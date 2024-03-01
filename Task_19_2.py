@@ -14,5 +14,5 @@ class Fibonacci:
 
 fib_iter = Fibonacci()
 
-for i in range(10):
+for i in range(int(input())):  # вывод: n членов последовательности 
     print(next(fib_iter), end=" ")
