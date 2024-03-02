@@ -17,13 +17,13 @@ for _ in range(num):
 # or
 
 # Вывод чисел-палиндромов до числа = limit:
-# def func():
+# def func(limit):
 #     for x in range(1, limit):
 #         if str(x) == str(x)[::-1]:
 #             yield x
-
+#
 # g = func(int(input()))
-
+#
 # while True:
 #     try:
 #         print(next(g), end=" ")
