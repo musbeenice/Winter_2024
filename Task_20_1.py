@@ -53,11 +53,6 @@ class VendingMachine:
             print("Not enough days passed...")
 
 
-class Resume:
-    def __init__(self):
-        pass
-
-
 menu_drinks = Menu(pos_1=["latte", 1.49],
                    pos_2=["cappuccino", 1.49],
                    pos_3=["espresso", .99])
@@ -65,7 +60,6 @@ menu_meals = Menu(pos_1=["pancake", .59],
                   pos_2=["cheesecake", .69],
                   pos_3=["donut", .49])
 me = Person("Alex", 100, 20)
-resume = Resume()
 vm = VendingMachine()
 vm.sell_drink(menu_drinks.kwargs["pos_1"], me)
 vm.sell_drink(menu_drinks.kwargs["pos_2"], me)
