@@ -2,13 +2,14 @@
 
 from re import *
 
+
 def remove_dupl(text):
-    while findall(r"(\w+)\W+\1", text) != []:
-        text = sub(r"(\w+)\W+\1", r"\1", text, flags = re.I)
+    while findall(r"(\w+)\W+\1", text):
+        text = sub(r"(\w+)\W+\1", r"\1", text, flags=I)
     return text
 
-msg = "Повторы здесь здесь запрещены запрещены запрещены законом законом законом законом законом"
 
+msg = "Повторы здесь здесь запрещены запрещены запрещены законом законом законом законом законом"
 print(remove_dupl(msg))
 
 # or
