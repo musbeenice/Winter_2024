@@ -4,16 +4,14 @@ import keyword
 from re import *
 
 msg = input()
-forbidden = keyword.kwlist
 
 
-def func(x):
-    s = x.group()
-    if s in forbidden:
+def replace_kw(x):
+    w = x.group()
+    if w in keyword.kwlist:
         return "<kw>"
     else:
-        return s
+        return w
 
 
-res = sub(r"\b\w+\b", func, msg)
-print(res)
+print(sub(r"\b\w+\b", replace_kw, msg))
