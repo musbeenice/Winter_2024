@@ -15,3 +15,12 @@ def replace_kw(x):
 
 
 print(sub(r"\b\w+\b", replace_kw, msg))
+
+# or
+
+# import keyword
+#
+# s = input()
+# for i in sorted(keyword.kwlist, key=len, reverse=True):
+#     s = s.replace(i, "kw")
+# print(s)
