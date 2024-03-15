@@ -2,17 +2,59 @@
 
 # bubble sort:
 
-a = [17, 24, 91, 96, 67, -27, 79, -71, -71, 58, 48, 88, 88, -16, -78, 96, -76, 56, 92, 1, 32, -17, 36, 88, -61, -97, -37, -84, 50, 47, 94, -6, 52, -76, 93, 14, -32, 98, -65, -16, -9, -68, -20, -40, -71, 93, -91, 44, 25, 79, 97, 0, -94, 7, -47, -96, -55, -58, -78, -78, -79, 75, 44, -56, -41, 38, 16, 70, 17, -17, -24, -83, -74, -73, 11, -26, 63, -75, -19, -13, -51, -74, 21, -8, 21, -68, -66, -84, -95, 78, 69, -29, 39, 38, -55, 7, -11, -26, -62, -84]
+# a = [17, 24, 91, 96, 67, -27, 79, -71, -79]
+#
+# n = len(a)
+#
+# for i in range(n - 1):
+#     are_swapped = False
+#     for j in range(n - i - 1):
+#         if a[j] > a[j + 1]:
+#             a[j], a[j + 1] = a[j + 1], a[j]
+#             are_swapped = True
+#         print(a)
+#     if not are_swapped:
+#         break
+#
+# print(a)
 
-n = len(a)
+# selection sort:
 
-for i in range(n - 1):
-    are_swapped = False
-    for j in range(n - i - 1):
-        if a[j] > a[j + 1]:
-            a[j], a[j + 1] = a[j + 1], a[j]
-            are_swapped = True
-    if not are_swapped:
-        break
 
-print(a)
+# def selection(lst):
+#     for i in range(len(lst) - 1):
+#         mini, i_mini = lst[i], i
+#         for j in range(i + 1, len(lst)):
+#             if lst[j] < mini:
+#                 mini, i_mini = lst[j], j
+#         lst[i], lst[i_mini] = lst[i_mini], lst[i]
+#         print(lst)
+#     return lst
+#
+#
+# print(selection([]))
+
+
+# QuickSort:
+
+
+import random
+
+
+def quicksort(nums):
+    if len(nums) <= 1:
+        return nums
+    else:
+        q = random.choice(nums)
+        l_nums = [n for n in nums if n < q]
+        e_nums = [q] * nums.count(q)
+        b_nums = [n for n in nums if n > q]
+        print(f"{l_nums}")
+        print(f"{e_nums}")
+        print(f"{b_nums}")
+        input("---")
+        return quicksort(l_nums) + e_nums + quicksort(b_nums)
+
+
+lst = [11, 1, 9, 2, 8, 7, 4, 8, 5, 3, 10]
+print(quicksort(lst))
