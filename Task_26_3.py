@@ -10,9 +10,7 @@ class Person:
 
     @age.setter
     def age(self, age_1):
-        self._age = age_1 if 1 <= age_1 <= 100 else None
-        if self._age is None:
-            raise ValueError("Недопустимый возраст")
+        self._age = age_1 if 1 <= age_1 <= 100 else 'Недопустимый возраст'
 
     @age.deleter
     def age(self):
@@ -23,3 +21,4 @@ p = Person(20)
 p.age = 30
 print(p.age)
 p.age = 0
+print(p.age)
