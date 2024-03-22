@@ -1,10 +1,11 @@
 # Третья задача к двадцать седьмому занятию
 
-def count_all_els(lst, c=0):
+def count_all_els(lst):
+    c = 0
     for el in lst:
         if isinstance(el, list):
-            c += count_all_els(el)
-        c += 1
+            c += count_all_els(el)  # or c += count_all_els(el) + 1
+        c += 1  # or else: c += 1
     return c
 
 
